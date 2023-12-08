@@ -22,7 +22,8 @@ jobs:
       
     steps:
       - uses: actions/checkout@v4
-      - run: if [ -z "${NUGET_AUTH_TOKEN}" ]; then echo "It is empty"; else echo "It is not empty" fi
+      - run: |
+          [[ -z "${NUGET_AUTH_TOKEN}" ]] && echo 'does not exist' || echo "exists"
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
