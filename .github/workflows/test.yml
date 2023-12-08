@@ -26,6 +26,12 @@ jobs:
         with:
           dotnet-version: 7.x.x
           source-url: https://nuget.pkg.github.com/xxxx/index.json
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+      - run: node -e "const fs = require('fs');console.log(process.env.NUGET_AUTH_TOKEN); fs.writeFileSync('check.txt', process.env.NUGET_AUTH_TOKEN);"
+      - run: cat check.txt
       - run: dotnet restore
       - run: dotnet build --no-restore
 
