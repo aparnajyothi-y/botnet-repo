@@ -18,7 +18,7 @@ jobs:
       DOTNET_CLI_TELEMETRY_OPTOUT: true
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
       DOTNET_INSTALL_DIR: "./.dotnet"
-      NUGET_AUTH_TOKEN: ${{secrets.GIT_TOKEN}}
+      NUGET_AUTH_TOKEN: ${{secrets.GIT_TOKEN1}}
       
     steps:
       - uses: actions/checkout@v4
